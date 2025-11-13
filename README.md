@@ -635,22 +635,35 @@ Developed for defensive security research and education.
 **Last Updated**: 2025-11-11
 
 don't forget to use this template to load the attacker location : 
-PUT _index_template/honeypot_template
+```bash
+curl -X PUT "http://localhost:9200/_index_template/honeypot_template" -H 'Content-Type: application/json' -d'
 {
   "index_patterns": ["honeypot-*"],
+  "priority": 1,
   "template": {
     "mappings": {
       "properties": {
         "source": {
           "properties": {
+            "ip": { "type": "ip" },
             "geo": {
               "properties": {
-                "location": { "type": "geo_point" }
+                "location": { "type": "geo_point" },
+                "country_name": { "type": "keyword" },
+                "city_name": { "type": "keyword" },
+                "country_iso_code": { "type": "keyword" }
               }
             }
           }
-        }
+        },
+        "destination": {
+          "properties": {
+            "ip": { "type": "ip" }
+          }
+        },
+        "@timestamp": { "type": "date" }
       }
     }
   }
-}
+}'
+```
