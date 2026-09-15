@@ -1,4 +1,4 @@
-# 🛡️ IDS Honeypot with AppArmor & ELK Integration
+#  IDS Honeypot with AppArmor & ELK Integration
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Docker](https://img.shields.io/badge/Docker-20.10+-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com)
