@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Flask Honeypot Web Application
-Logs all access attempts and sends events to Logstash/ELK
+Logs all access attempts and sends events to Logstash/ELK.
 """
 
 import os
